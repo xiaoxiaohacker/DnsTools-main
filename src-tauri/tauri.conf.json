@@ -1,0 +1,85 @@
+{
+  "build": {
+    "beforeDevCommand": "yarn dev",
+    "beforeBuildCommand": "yarn build",
+    "devPath": "http://localhost:1420",
+    "distDir": "../dist"
+  },
+  "package": {
+    "productName": "DnsTools",
+    "version": "1.2.3"
+  },
+  "tauri": {
+    "allowlist": {
+      "dialog": {
+        "all": false,
+        "ask": false,
+        "confirm": false,
+        "message": false,
+        "open": true,
+        "save": false
+      },
+      "all": false,
+      "shell": {
+        "all": false,
+        "open": true
+      },
+      "fs": {
+        "all": true,
+        "copyFile": true,
+        "createDir": true,
+        "exists": true,
+        "readDir": true,
+        "readFile": true,
+        "removeDir": true,
+        "removeFile": true,
+        "renameFile": true,
+        "scope": [],
+        "writeFile": true
+      },
+      "http": {
+        "all": true,
+        "request": true,
+        "scope": ["https://update.dnstools.xwsclub.top/*"]
+      }
+    },
+    "bundle": {
+      "active": true,
+      "targets": "all",
+      "identifier": "top.xwsclub",
+      "icon": [
+        "icons/32x32.png",
+        "icons/128x128.png",
+        "icons/128x128@2x.png",
+        "icons/icon.icns",
+        "icons/icon.ico",
+        "icons/icon.png"
+      ],
+      "resources": ["DnsList.json", "DnsList.min.json", "DnsList.v6.json"]
+    },
+
+    "security": {
+      "csp": null
+    },
+    "updater": {
+      "active": true,
+      "dialog": true,
+      "endpoints": ["https://update.dnstools.xwsclub.top/update.json"],
+      "pubkey": "dW50cnVzdGVkIGNvbW1lbnQ6IG1pbmlzaWduIHB1YmxpYyBrZXk6IEFCMDEyNDFEQUQ2QjIxNQpSV1FWc3RiYVFSS3dDamRwaVZnK2NvL3JKQ1UxM2RrNGNxNEVuVFlGRG5hZkRmR3ZRSUltZHFGVAo=",
+      "windows": {
+        "installMode": "passive",
+        "installerArgs": []
+      }
+    },
+    "windows": [
+      {
+        "fullscreen": false,
+        "resizable": true,
+        "title": "DnsTools",
+        "width": 1025,
+        "height": 665,
+        "transparent": true
+      }
+    ]
+  }
+}
